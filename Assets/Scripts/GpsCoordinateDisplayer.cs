@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 #if UNITY_ANDROID
 using UnityEngine.Android;
@@ -6,41 +7,71 @@ using UnityEngine.Android;
 
 public class GpsCoordinateDisplayer : MonoBehaviour
 {
+    private const float DESIRED_ACCURACY_METERS = 1f;
+
+    [SerializeField]
+    private Text _latitude;
+
+    [SerializeField]
+    private Text _longitude;
+
 	private void Start()
 	{
-        StartCoroutine("LocationCoroutine");
+        //StartCoroutine("LocationCoroutine");
+        
 	}
+
+	private void Update()
+    {
+        if (Input.location.status != LocationServiceStatus.Running)
+        {
+            Input.location.Start(DESIRED_ACCURACY_METERS, DESIRED_ACCURACY_METERS);
+            _latitude.text = "Initializing...";
+            _longitude.text = "Initializing...";
+        }
+        else
+        {
+            _latitude.text = Input.location.lastData.latitude.ToString("F5");
+            _longitude.text = Input.location.lastData.longitude.ToString("F5");
+        }
+    }
 
 	IEnumerator LocationCoroutine()
     {
 		// Uncomment if you want to test with Unity Remote
-		/*#if UNITY_EDITOR
+		/*
+#if UNITY_EDITOR
                 yield return new WaitWhile(() => !UnityEditor.EditorApplication.isRemoteConnected);
                 yield return new WaitForSecondsRealtime(5f);
-        #endif*/
+#endif
+        */
+
 #if UNITY_EDITOR
 		// No permission handling needed in Editor
 #elif UNITY_ANDROID
-        if (!Permission.HasUserAuthorizedPermission(Permission.CoarseLocation)) {
+        if (!Permission.HasUserAuthorizedPermission(Permission.CoarseLocation))
+        {
             Permission.RequestUserPermission(Permission.CoarseLocation);
         }
 
         // First, check if user has location service enabled
-        if (!Input.location.isEnabledByUser) {
+        if (!Input.location.isEnabledByUser)
+        {
             // TODO Failure
             Debug.LogFormat("Android and Location not enabled");
             yield break;
         }
 
 #elif UNITY_IOS
-        if (!Input.location.isEnabledByUser) {
+        if (!Input.location.isEnabledByUser)
+        {
             // TODO Failure
             Debug.LogFormat("IOS and Location not enabled");
             yield break;
         }
 #endif
 		// Start service before querying location
-		Input.location.Start(500f, 500f);
+		Input.location.Start(DESIRED_ACCURACY_METERS, DESIRED_ACCURACY_METERS);
 
         // Wait until service initializes
         int maxWait = 15;
