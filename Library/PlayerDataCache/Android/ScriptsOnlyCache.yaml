@@ -1,7 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - GpsCoordinateDisplayer
+    - HeathCo.Game.MainGame
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -15,6 +15,27 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/_launcher.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 16824}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
     Assets/Scenes/_main.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -51,11 +72,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11832}
     - Class: 114
-      Script: {instanceID: 12086}
-    - Class: 114
       Script: {instanceID: 12696}
     - Class: 114
       Script: {instanceID: 13046}
+    - Class: 114
+      Script: {instanceID: 16824}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -277,12 +298,6 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 844c307ec117dd31fe2349bbb1a6662b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GpsCoordinateDisplayer
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -497,7 +512,26 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 844c307ec117dd31fe2349bbb1a6662b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: HeathCo.Game
+    className: MainGame
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityAsyncAwaitUtil
+    className: AsyncCoroutineRunner
+  - hash:
+      serializedVersion: 2
+      Hash: 5224a48699d18b2633d9b4696a646870
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityAsyncAwaitUtil
+    className: AsyncUtilTests
   platform: 13
   scenePathNames:
+  - Assets/Scenes/_launcher.unity
   - Assets/Scenes/_main.unity
   playerPath: D:/prj/home/unity/birthday13/Builds/Android.apk
