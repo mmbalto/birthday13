@@ -47,15 +47,6 @@ namespace HeathCo.GameServices
 		/// <param name="onFailure">Method to call if the service fails to start.</param>
 		private async Task StartupService(float accuracyMeters, Action onSuccess, Action onFailure)
 		{
-
-			// Uncomment if you want to test with Unity Remote
-			/*
-    #if UNITY_EDITOR
-                    yield return new WaitWhile(() => !UnityEditor.EditorApplication.isRemoteConnected);
-                    yield return new WaitForSecondsRealtime(5f);
-    #endif
-            */
-
 			Input.location.Start(accuracyMeters);
 			while (IsInitializing() && !FailedInitialization())
 			{
@@ -84,7 +75,7 @@ namespace HeathCo.GameServices
 		/// Determine whether or not the location service is started.
 		/// </summary>
 		/// <returns>True if the service has started, otherwise false.</returns>
-		public bool IsStarted()
+		public virtual bool IsStarted()
 		{
 			return Input.location.status == LocationServiceStatus.Running;
 		}
@@ -93,7 +84,7 @@ namespace HeathCo.GameServices
 		/// Determines the last known latitude of the device.
 		/// </summary>
 		/// <returns>The last known latitude of the device.</returns>
-		public float GetLatitude()
+		public virtual float GetLatitude()
 		{
 			return Input.location.lastData.latitude;
 		}
@@ -102,7 +93,7 @@ namespace HeathCo.GameServices
 		/// Determines the last known longitude of the device.
 		/// </summary>
 		/// <returns>The last known longitude of the device.</returns>
-		public float GetLongitude()
+		public virtual float GetLongitude()
 		{
 			return Input.location.lastData.longitude;
 		}

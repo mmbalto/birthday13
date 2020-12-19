@@ -29,18 +29,20 @@ namespace HeathCo.Game
 
         private void OnLocationServiceSucceeded()
         {
+            Debug.LogFormat("SUCCESS!");
         }
 
         private void OnLocationServiceFailed()
         {
+            Debug.LogFormat("FAILURE!");
         }
 
         private void Update()
         {
 			if (ServiceLocator.Instance.Get<ILocationService>().IsStarted())
 			{
-				_latitude.text = Input.location.lastData.latitude.ToString("F5");
-				_longitude.text = Input.location.lastData.longitude.ToString("F5");
+				_latitude.text = ServiceLocator.Instance.Get<ILocationService>().GetLatitude().ToString("F5");
+				_longitude.text = ServiceLocator.Instance.Get<ILocationService>().GetLongitude().ToString("F5");
 			}
 			else
 			{
