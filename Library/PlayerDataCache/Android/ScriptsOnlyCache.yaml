@@ -15,27 +15,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/_launcher.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 16824}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
     Assets/Scenes/_main.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -68,15 +47,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11248}
     - Class: 114
-      Script: {instanceID: 11406}
+      Script: {instanceID: 11412}
     - Class: 114
-      Script: {instanceID: 11832}
+      Script: {instanceID: 11846}
     - Class: 114
-      Script: {instanceID: 12696}
+      Script: {instanceID: 12718}
     - Class: 114
-      Script: {instanceID: 13046}
+      Script: {instanceID: 12840}
     - Class: 114
-      Script: {instanceID: 16824}
+      Script: {instanceID: 13078}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -134,6 +113,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityAsyncAwaitUtil
+    className: AsyncCoroutineRunner
   - hash:
       serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
@@ -406,6 +391,12 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 86725d52201b24722be4eb5144f55741
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: HeathCo.Game
+    className: MainGame
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -428,6 +419,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ColorGradient
+  - hash:
+      serializedVersion: 2
+      Hash: 5224a48699d18b2633d9b4696a646870
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityAsyncAwaitUtil
+    className: AsyncUtilTests
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -512,26 +509,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 844c307ec117dd31fe2349bbb1a6662b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: HeathCo.Game
-    className: MainGame
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp-firstpass.dll
-    namespaceName: UnityAsyncAwaitUtil
-    className: AsyncCoroutineRunner
-  - hash:
-      serializedVersion: 2
-      Hash: 5224a48699d18b2633d9b4696a646870
-    assemblyName: Assembly-CSharp-firstpass.dll
-    namespaceName: UnityAsyncAwaitUtil
-    className: AsyncUtilTests
   platform: 13
   scenePathNames:
-  - Assets/Scenes/_launcher.unity
   - Assets/Scenes/_main.unity
   playerPath: D:/prj/home/unity/birthday13/Builds/Android.apk

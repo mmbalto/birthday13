@@ -15,9 +15,9 @@ namespace HeathCo.GameServices
 		/// <returns>True if location permissions are enabled, otherwise false.</returns>
 		protected override bool HasPermissions()
 		{
-			if (!Permission.HasUserAuthorizedPermission(Permission.CoarseLocation))
+			if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
 			{
-				Permission.RequestUserPermission(Permission.CoarseLocation);
+				Permission.RequestUserPermission(Permission.FineLocation);
 			}
 
 			return base.HasPermissions();

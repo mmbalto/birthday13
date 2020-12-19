@@ -22,9 +22,19 @@ namespace HeathCo.Game
         [SerializeField]
         private Text _longitude;
 
+        [SerializeField]
+        private GameObject _tempCube;
+
         private void Start()
         {
+#if UNITY_ANDROID
+            ServiceLocator.Instance.Register<ILocationService>(new LocationServiceAndroid());
+#elif UNITY_EDITOR
+            ServiceLocator.Instance.Register<ILocationService>(new LocationServiceEditor());
+#endif
+
             ServiceLocator.Instance.Get<ILocationService>().Start(LOCATION_ACCURACY_METERS, OnLocationServiceSucceeded, OnLocationServiceFailed);
+            Input.gyro.enabled = true;
         }
 
         private void OnLocationServiceSucceeded()
@@ -49,6 +59,13 @@ namespace HeathCo.Game
 				_latitude.text = "Initializing...";
 				_longitude.text = "Initializing...";
 			}
+
+            GyroModifyCamera();
 		}
+
+        void GyroModifyCamera()
+        {
+            _tempCube.transform.rotation = Input.gyro.attitude;
+        }
     }
 }
