@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace HeathCo.GameServices
+﻿namespace HeathCo.GameServices
 {
 	/// <summary>
 	/// Interface that all game service classes must implement in order to be
